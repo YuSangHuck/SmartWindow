@@ -18,6 +18,7 @@ float dustDensity = 0;
 #ifdef DEBUG
 const int rainLed = 13;
 const int sunnyLed = 12;
+const int dustLed = 11;
 #endif
 
 void WindowControl(char *order);
@@ -75,7 +76,8 @@ void loop() {
   if(rainControl==1) Serial.print("O\t");
   else Serial.print("/\t");
   Serial.print("\tDust Density: ");
-  Serial.println(dustDensity); // unit: mg/m3
+  Serial.println(dustDensity); // unit: mg/m3(0~0.61)
+  analogWrite(dustLed,(dustDensity+0.08)*418);
   #endif  
   
 }
