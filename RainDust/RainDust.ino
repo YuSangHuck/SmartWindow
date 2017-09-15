@@ -1,10 +1,10 @@
 #define DEBUG
 
-#define IN1 2
-#define IN2 3
-#define RAIN_DIGITAL 7            // RainSensor
-#define DUST_VALUE A0             // DustSensor
-#define DUST_CONTROL 5
+#define IN1 2					  // Arduino send a signal to MotorDriver. digitalWrite(IN1,HIGH) means MotorDriver send HIGH to Motor
+#define IN2 3					  // Arudino send a siganl to MotorDriver
+#define RAIN_DIGITAL 7            // Read RainSensor Value(Digital)
+#define DUST_VALUE A0             // Read DustSensor Value(Analog)
+#define DUST_CONTROL 5			  // Control operating of DustSensor. LOW(start)->HIGH(stop)
 
 unsigned long pre = 0;
 bool isRain = false; // false가 Norain, true가 rain
